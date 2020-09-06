@@ -1,0 +1,11 @@
+1．【超応用】 プロフィールの更新履歴を保存する仕組みを作るにはどのようにしたらよいでしょうか。手順をまとめてみましょう。
+(1)	Migrationファイルの雛形を作成する。
+(2)	Migrationを実行する。
+(3)	History Modelの雛形を作成する。
+　  作成したHistory Model にIdと編集を追加する。
+(4)	Profile Modelとの関連を定義するために、Profile.php へtitleとbobyを追記する。
+(5)	NewsController の update ActionにNews Modelを保存する要素と合わせて、 History Model編集履歴の要素を追加する。
+(6)	時刻を扱うために Carbonという日付操作ライブラリを使う。
+　  ProfileController.php の冒頭に「use Carbon\Carbon;」を追記。
+　  また、Historyモデルの使用を宣言するため、「use App\History;」を同様に追記
+(7)	記録した変更履歴を編集画面で参照できるようにedit.blade.phpに変更履歴 を表示する内容を追記する。
